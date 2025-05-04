@@ -14,5 +14,12 @@
     DATABASE_URL=your_database_url(mongodb+srv://kusalya:kusalya@dscluster.tm2ngr9.mongodb.net/af_project?retryWrites=true&w=majority&appName=DScluster)
     JWT_SECRET=your_secret_key(kusalya)
 
+#challenges 
+deploying in render site 
+using tailwind and postcss
+
+
 host - https://af-project-countries-app-1.onrender.com
+
+
 https://mysliit-my.sharepoint.com/:f:/g/personal/it22629562_my_sliit_lk/EkCol1e6hxhGpWPmdvl_fMkBPYLRVnxJV7Fgzl2oJvPM-w?e=cHikhP
