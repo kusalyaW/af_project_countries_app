@@ -1,28 +1,70 @@
 import React from 'react';
+import Select from 'react-select';
 
-const regions = ['Africa','Americas','Asia','Europe','Oceania'];
+const regions   = ['Africa','Americas','Asia','Europe','Oceania'];
 const languages = ['en','es','fr','ar','ru','zh'];
 
-const FilterBar = ({ region, setRegion, lang, setLang, search, setSearch, onFilter }) => (
-  <div className="flex flex-wrap gap-4 mb-4">
-    <input
-      type="text"
-      placeholder="Search by name..."
-      value={search}
-      onChange={e => setSearch(e.target.value)}
-      onKeyDown={e => e.key === 'Enter' && onFilter()}
-      className="border p-2 flex-1"
-    />
-    <select value={region} onChange={e => setRegion(e.target.value)} className="border p-2">
-      <option value="">All Regions</option>
-      {regions.map(r => <option key={r} value={r}>{r}</option>)}
-    </select>
-    <select value={lang} onChange={e => setLang(e.target.value)} className="border p-2">
-      <option value="">All Languages</option>
-      {languages.map(l => <option key={l} value={l}>{l}</option>)}
-    </select>
-    <button onClick={onFilter} className="bg-blue-500 text-white px-4 py-2">Filter</button>
-  </div>
-);
+const sortOptions = [
+  { value: '',           label: 'Default'      },
+  { value: 'name-asc',   label: 'Name A→Z'     },
+  { value: 'name-desc',  label: 'Name Z→A'     },
+  { value: 'pop-asc',    label: 'Population ↑' },
+  { value: 'pop-desc',   label: 'Population ↓' },
+];
 
-export default FilterBar;
+export default function FilterBar({
+  region,    setRegion,
+  lang,      setLang,
+  search,    setSearch,
+  sort,      setSort,      // ← grab these props
+}) {
+  return (
+    <div className="flex flex-wrap gap-4 mb-4 items-center">
+      {/* Live search */}
+      <input
+        type="text"
+        placeholder="Search by name…"
+        value={search}
+        onChange={e => setSearch(e.target.value)}
+        className="border p-2 flex-1 min-w-[200px] dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+      />
+
+      {/* Sort dropdown (react-select) */}
+      <div className="min-w-[150px]">
+        <Select
+          options={sortOptions}
+          value={sortOptions.find(o => o.value === sort) || sortOptions[0]}
+          onChange={opt => setSort(opt.value)}
+          className="dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+          isSearchable={false}
+          placeholder="Sort…"
+          
+        />
+      </div>
+
+      {/* Region filter */}
+      <select
+        value={region}
+        onChange={e => setRegion(e.target.value)}
+        className="border p-2 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+      >
+        <option value="">All Regions</option>
+        {regions.map(r => (
+          <option key={r} value={r}>{r}</option>
+        ))}
+      </select>
+
+      {/* Language filter */}
+      <select
+        value={lang}
+        onChange={e => setLang(e.target.value)}
+        className="border p-2 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+      >
+        <option value="">All Languages</option>
+        {languages.map(l => (
+          <option key={l} value={l}>{l.toUpperCase()}</option>
+        ))}
+      </select>
+    </div>
+  );
+}
