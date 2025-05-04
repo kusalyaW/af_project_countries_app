@@ -11,7 +11,7 @@
 1. Create a .env file in the backend directory with the following content:
     env
     PORT=your_port(5000)
-    DATABASE_URL=your_database_url(mongodb+srv://hayleycallisto:ZaqEo5wBilyOWSkk@financialtracker.opbi8.mongodb.net/?retryWrites=true&w=majority&appName=financialTracker)
+    DATABASE_URL=your_database_url(mongodb+srv://kusalya:kusalya@dscluster.tm2ngr9.mongodb.net/af_project?retryWrites=true&w=majority&appName=DScluster)
     JWT_SECRET=your_secret_key(kusalya)
 
 host - https://af-project-countries-app-1.onrender.com
