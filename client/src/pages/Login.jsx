@@ -14,14 +14,16 @@ const Login = () => {
     try {
         
       const res = await fetch('https://af-project-countries-app.onrender.com/api/auth/login',{
-        method:'POST',
-        headers:JSON.stringify({email,password}),
-        credentials:'include',
+        method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, password }),
       });
       const data = await res.json();
       console.log(data)
       console.log('awa')
-      login(res.data);
+      login(data);
       console.log(res);
       navigate('/');
     } catch (err) {
