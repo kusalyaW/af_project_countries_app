@@ -12,6 +12,7 @@ const Login = () => {
   const onSubmit = async e => {
     e.preventDefault();
     try {
+        
       const res = await loginUser(email, password);
       console.log('awa')
       login(res.data);
