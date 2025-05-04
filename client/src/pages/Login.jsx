@@ -13,7 +13,13 @@ const Login = () => {
     e.preventDefault();
     try {
         
-      const res = await loginUser(email, password);
+      const res = await fetch('https://af-project-countries-app.onrender.com/api/auth/login',{
+        method:'POST',
+        headers:JSON.stringify({email,password}),
+        credentials:'include',
+      });
+      const data = await res.json();
+      console.log(data)
       console.log('awa')
       login(res.data);
       console.log(res);
