@@ -178,11 +178,11 @@ import React, {
                   <h2 className="text-2xl font-semibold mb-2">
                     {selectedCountry.name.common}
                   </h2>
-                  <p><strong>Official:</strong> {selectedCountry.name.official}</p>
-                  <p><strong>Population:</strong> {selectedCountry.population.toLocaleString()}</p>
-                  <p><strong>Region:</strong> {selectedCountry.region}</p>
-                  <p><strong>Capital:</strong> {selectedCountry.capital?.[0] || '—'}</p>
-                  <p>
+                  <p data-testid="modal-official"><strong>Official:</strong> {selectedCountry.name.official}</p>
+                  <p data-testid="modal-population"><strong>Population:</strong> {selectedCountry.population.toLocaleString()}</p>
+                  <p data-testid="modal-region"><strong>Region:</strong> {selectedCountry.region}</p>
+                  <p data-testid="modal-capital"><strong>Capital:</strong> {selectedCountry.capital?.[0] || '—'}</p>
+                  <p data-testid="modal-languages">
                     <strong>Languages:</strong>{' '}
                     {Object.values(selectedCountry.languages || {}).join(', ')}
                   </p>
