@@ -7,11 +7,12 @@ import Country from './pages/Country';
 import Favorites from './pages/Favorites';
 import Login from './pages/Login';
 import Register from './pages/Register';
-useEffect(() => {
-  console.log('🚀 API_BASE_URL =', import.meta.env.VITE_API_BASE_URL);
-}, []);
+
 
 function App() {
+  useEffect(() => {
+    console.log('🚀 API_BASE_URL =', import.meta.env.VITE_API_BASE_URL);
+  }, []);
   return (
     <AuthProvider>
       <Router>
