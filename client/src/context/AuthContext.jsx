@@ -4,22 +4,10 @@ import axios from 'axios';
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(() => {
-        const raw = localStorage.getItem('user');
-        if (!raw || raw === 'undefined') {
-          // nothing stored yet, or accidentally wrote "undefined"
-          localStorage.removeItem('user');
-          return null;
-        }
-        try {
-          return JSON.parse(raw);
-        } catch {
-          // malformed JSON—clean up and fall back
-          localStorage.removeItem('user');
-          return null;
-        }
-      });
-      
+  const [user, setUser] = useState(() => {
+    const u = localStorage.getItem('user');
+    return u ? JSON.parse(u) : null;
+  });
   const [token, setToken] = useState(localStorage.getItem('token') || '');
 
   useEffect(() => {
@@ -34,7 +22,6 @@ export const AuthProvider = ({ children }) => {
 
   const login = (data) => {
     setUser(data.user);
-    console.log(user)
     setToken(data.token);
     localStorage.setItem('user', JSON.stringify(data.user));
   };

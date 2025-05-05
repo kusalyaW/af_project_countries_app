@@ -12,18 +12,9 @@ const Login = () => {
   const onSubmit = async e => {
     e.preventDefault();
     try {
-        
-      const res = await fetch('https://af-project-countries-app.onrender.com/api/auth/login',{
-        method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ email, password }),
-      });
-      const data = await res.json();
-      console.log(data)
+      const res = await loginUser(email, password);
       console.log('awa')
-      login(data);
+      login(res.data);
       console.log(res);
       navigate('/');
     } catch (err) {

@@ -13,7 +13,7 @@ export default defineConfig({
     proxy: {
       // any request that starts with /api will be forwarded to port 5000
       '/api': {
-        target: 'https://af-project-countries-app.onrender.com',
+        target: 'http://localhost:5000',
         changeOrigin: true,
         secure: false,
       },

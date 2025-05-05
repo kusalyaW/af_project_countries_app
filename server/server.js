@@ -8,26 +8,12 @@ const auth = require('./middleware/auth');
 
 
 const app = express();
-// app.use(cors());
-// CORS configuration
-const allowedOrigins = [
-    'https://af-project-countries-app-1.onrender.com/', // Production frontend URL
-    // 'http://localhost:5173', // Development URL (for local testing)
-];
+// server.js (or wherever you mount your routers)
+app.get('/health', (req, res) => {
+  res.json({ status: 'OK', time: new Date().toISOString() });
+});
 
-app.use(cors({
-    origin: function (origin, callback) {
-        // Check if the origin is in the allowed list
-        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    methods: 'GET,POST,DELETE',
-    allowedHeaders: 'Content-Type,Authorization',
-    credentials: true,  // This is necessary if you're using cookies
-}));
+app.use(cors());
 app.use(express.json());
 
 mongoose.connect(process.env.MONGODB_URI)
