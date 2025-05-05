@@ -1,3 +1,4 @@
+console.log('> BUILD-TIME VITE_API_BASE_URL =', process.env.VITE_API_BASE_URL);
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
