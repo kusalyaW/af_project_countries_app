@@ -43,26 +43,6 @@ export default function CountryCard({
       <p className="text-sm">Population: {country.population.toLocaleString()}</p>
       <p className="text-sm">Region: {country.region}</p>
       <p className="text-sm">Capital: {country.capital?.[0] || '—'}</p>
-      <p data-testid="modal-currencies">
-        <strong>Currencies:</strong>{' '}
-         {selectedCountry.currencies
-           ? Object.values(selectedCountry.currencies)
-               .map(c => c.name)
-               .join(', ')
-           : '—'}
-       </p>
-
-       <p data-testid="modal-timezones">
-         <strong>Timezones:</strong>{' '}
-         {selectedCountry.timezones?.join(', ')}
-       </p>
-
-       <p data-testid="modal-borders">
-         <strong>Border Countries:</strong>{' '}
-         {selectedCountry.borders?.join(', ') || 'None'}
-       </p>
-      
-    
     </div>
   );
 }

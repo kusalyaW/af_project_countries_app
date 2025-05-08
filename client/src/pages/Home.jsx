@@ -186,6 +186,28 @@ import React, {
                     <strong>Languages:</strong>{' '}
                     {Object.values(selectedCountry.languages || {}).join(', ')}
                   </p>
+                  <p data-testid="modal-currencies">
+              <strong>Currencies:</strong>{' '}
+              {selectedCountry.currencies
+                ? Object.values(selectedCountry.currencies)
+                    .map(c => c.name)
+                    .join(', ')
+                : '—'}
+            </p>
+
+            {/* NEW: Timezones */}
+            <p data-testid="modal-timezones">
+              <strong>Timezones:</strong>{' '}
+              {selectedCountry.timezones?.join(', ') || '—'}
+            </p>
+
+            {/* NEW: Border Countries */}
+            <p data-testid="modal-borders">
+              <strong>Border Countries:</strong>{' '}
+              {selectedCountry.borders?.length
+                ? selectedCountry.borders.join(', ')
+                : 'None'}
+            </p>
                 </div>
               </div>
             )}
