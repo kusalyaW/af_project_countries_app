@@ -26,8 +26,7 @@ function AppContent() {
 
   return (
     <>
-      {/* always show NavBar except on Landing */}
-      {pathname !== '/' && <NavBar />}
+
 
       <main className="pt-16 flex-1 container mx-auto p-4">
         <Routes>
