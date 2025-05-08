@@ -23,7 +23,7 @@ function Layout() {
       <main className="flex-1 container mx-auto p-4">
         <Outlet />                                {/* renders the matched child route */}
       </main>
-     
+      <Footer />
     </div>
   );
 }
@@ -52,7 +52,6 @@ export default function App() {
             </Route>
           </Routes>
         </main>
-        <Footer />
       </Router>
     </AuthProvider>
   );
