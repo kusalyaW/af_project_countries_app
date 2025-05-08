@@ -3,7 +3,7 @@ import React, { useState, useContext } from 'react';
 import { login as loginUser } from '../api/auth';
 import { AuthContext }     from '../context/AuthContext';
 import { useNavigate }     from 'react-router-dom';
-import { MailIcon, LockClosedIcon, EyeIcon, EyeOffIcon } from '@heroicons/react/outline';
+import { MailIcon, LockClosedIcon, EyeIcon, EyeOffIcon } from '@heroicons/react/24/outline';
 
 export default function Login() {
   const [email, setEmail]       = useState('');
