@@ -13,17 +13,18 @@ import Favorites from './pages/Favorites';
 import Login    from './pages/Login';
 import Register from './pages/Register';
 
-function Layout({ children }) {
+function Layout() {
   const { pathname } = useLocation();
-  // show the navbar on every route except exact "/"
-  const showNav = pathname !== '/';
+  const showNav = pathname !== '/';             // only hide on landing
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       {showNav && <NavBar />}
-      <main className="flex-1 container mx-auto p-4">{children}</main>
+      <main className="flex-1 container mx-auto p-4">
+        <Outlet />                                {/* renders the matched child route */}
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }
 export default function App() {
@@ -39,11 +40,13 @@ export default function App() {
         <main className="flex-1 container mx-auto p-4">
           <Routes>
             <Route path="/"         element={<Landing />} />
+            <Route element={<Layout />}>
             <Route path="/app"      element={<Home />} />
             <Route path="/country/:code" element={<Country />} />
             <Route path="/favorites"     element={<Favorites />} />
             <Route path="/login"         element={<Login />} />
             <Route path="/register"      element={<Register />} />
+            </Route>
           </Routes>
         </main>
         <Footer />
