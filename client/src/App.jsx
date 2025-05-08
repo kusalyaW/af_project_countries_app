@@ -43,8 +43,9 @@ export default function App() {
             <Route path="/login"         element={<Login />} />
             <Route path="/register"      element={<Register />} />
             <Route path="/country/:code" element={<Country />} />
-            <Route element={<Layout />}>
             <Route path="/app"      element={<Home />} />
+            <Route element={<Layout />}>
+            
             
             
             <Route path="/favorites"     element={<Favorites />} />
