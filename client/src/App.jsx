@@ -1,6 +1,6 @@
 // client/src/App.jsx
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route,useLocation,Outlet } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 
 //import Header   from './components/Header';
