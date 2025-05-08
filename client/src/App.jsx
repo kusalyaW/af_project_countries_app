@@ -49,7 +49,7 @@ export default function App() {
             </Route>
           </Routes>
         </main>
-        <Footer />
+        
       </Router>
     </AuthProvider>
   );
