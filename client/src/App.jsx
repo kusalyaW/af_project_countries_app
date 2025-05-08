@@ -37,7 +37,7 @@ export default function App() {
     <AuthProvider>
       <Router>
         <NavBar />
-        <main className="flex-1 container mx-auto p-4">
+        <main className="pt-16 flex-1 container mx-auto p-4">
           <Routes>
             <Route path="/"         element={<Landing />} />
             <Route element={<Layout />}>
