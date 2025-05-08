@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "axios": "^1.9.0",
     "lucide-react": "^0.507.0",
     "nodemon": "^3.1.10",
