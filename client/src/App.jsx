@@ -38,14 +38,15 @@ export default function App() {
       <Router>
         <NavBar />
         <main className="pt-16 flex-1 container mx-auto p-4">
+        <Route path="/login"         element={<Login />} />
+        <Route path="/register"      element={<Register />} />
           <Routes>
             <Route path="/"         element={<Landing />} />
             <Route element={<Layout />}>
             <Route path="/app"      element={<Home />} />
             <Route path="/country/:code" element={<Country />} />
             <Route path="/favorites"     element={<Favorites />} />
-            <Route path="/login"         element={<Login />} />
-            <Route path="/register"      element={<Register />} />
+            
             </Route>
           </Routes>
         </main>

@@ -3,13 +3,7 @@ import React, { useState, useContext } from 'react';
 import { register as registerUser } from '../api/auth';
 import { AuthContext }            from '../context/AuthContext';
 import { useNavigate, Link }      from 'react-router-dom';
-import {
-  UserIcon,
-  EnvelopeIcon,
-  LockClosedIcon,
-  EyeIcon,
-  EyeSlashIcon
-} from '@heroicons/react/24/outline';
+import { UserIcon,EnvelopeIcon,LockClosedIcon,EyeIcon,EyeSlashIcon } from '@heroicons/react/24/outline';
 
 export default function Register() {
   const [name,    setName]    = useState('');
