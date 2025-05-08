@@ -23,7 +23,7 @@ function Layout() {
       <main className="flex-1 container mx-auto p-4">
         <Outlet />                                {/* renders the matched child route */}
       </main>
-      <Footer />
+     
     </div>
   );
 }
@@ -43,11 +43,11 @@ export default function App() {
             <Route path="/login"         element={<Login />} />
             <Route path="/register"      element={<Register />} />
             <Route path="/app"      element={<Home />} />
-            
+            <Route path="/favorites"     element={<Favorites />} />
             <Route element={<Layout />}>
            
             
-            <Route path="/favorites"     element={<Favorites />} />
+            
             
             </Route>
           </Routes>
