@@ -3,12 +3,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowUpIcon,
-  // outline icons from Heroicons v2
   ChatBubbleOvalLeftEllipsisIcon,
   HeartIcon,
   HomeIcon,
   InformationCircleIcon,
-  // social icons
   CodeBracketSquareIcon,
   ChatBubbleLeftIcon
 } from '@heroicons/react/24/outline';
@@ -17,8 +15,9 @@ export default function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
-    <footer className="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 py-8">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+    <footer className="w-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 py-8">
+      {/* Full-width wrapper */}
+      <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
         {/* Branding / Attribution */}
         <div className="text-center md:text-left mb-4 md:mb-0">
           <p className="font-semibold">🌍 Countries App</p>
@@ -48,26 +47,34 @@ export default function Footer() {
           </Link>
         </nav>
 
-        {/* Social / Code Links */}
-        <div className="flex space-x-4">
-          <a
-            href="https://github.com/kusalyaW/af_project_countries_app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-gray-900 dark:hover:text-white"
-            aria-label="GitHub"
-          >
-            <CodeBracketSquareIcon className="w-6 h-6" />
-          </a>
-          <a
-            href="https://twitter.com/intent/tweet?text=Check+out+this+Countries+App!"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-blue-500"
-            aria-label="Tweet"
-          >
-            <ChatBubbleLeftIcon className="w-6 h-6" />
-          </a>
+        {/* Contact & Social */}
+        <div className="flex flex-col sm:flex-row sm:space-x-6 items-center">
+          {/* Contact info */}
+          <div className="text-sm mb-4 sm:mb-0">
+            <p>📧 <a href="mailto:support@countriesapp.com" className="underline hover:text-blue-600">support@countriesapp.com</a></p>
+            <p>📞 +1 (555) 123-4567</p>
+          </div>
+          {/* Code & Tweet */}
+          <div className="flex space-x-4">
+            <a
+              href="https://github.com/kusalyaW/af_project_countries_app"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="hover:text-gray-900 dark:hover:text-white"
+            >
+              <CodeBracketSquareIcon className="w-6 h-6" />
+            </a>
+            <a
+              href="https://twitter.com/intent/tweet?text=Check+out+this+Countries+App!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-500"
+              aria-label="Tweet"
+            >
+              <ChatBubbleLeftIcon className="w-6 h-6" />
+            </a>
+          </div>
         </div>
       </div>
 
