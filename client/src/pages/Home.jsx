@@ -109,7 +109,7 @@ import React, {
     };
   
     return (
-      <div className="flex flex-col flex-1 overflow-hidden">
+      <div className="fixed inset-x-0 top-16 bottom-0 flex flex-col">
         {/* Mobile Filters button */}
         <button
           className="absolute top-4 left-4 z-40 p-2 bg-blue-600 text-white rounded lg:hidden"
