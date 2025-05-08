@@ -30,7 +30,7 @@ function Layout() {
 export default function App() {
   // optional: console.log your API URL
   useEffect(() => {
-    console.log('🚀 API_BASE_URL =', import.meta.env.VITE_API_BASE_URL);
+    console.log('API_BASE_URL =', import.meta.env.VITE_API_BASE_URL);
   }, []);
 
   return (
@@ -42,17 +42,17 @@ export default function App() {
             <Route path="/"         element={<Landing />} />
             <Route path="/login"         element={<Login />} />
             <Route path="/register"      element={<Register />} />
-            <Route path="/country/:code" element={<Country />} />
-            <Route element={<Layout />}>
             <Route path="/app"      element={<Home />} />
             
+            <Route element={<Layout />}>
+           
             
             <Route path="/favorites"     element={<Favorites />} />
             
             </Route>
           </Routes>
         </main>
-        
+        <Footer />
       </Router>
     </AuthProvider>
   );
