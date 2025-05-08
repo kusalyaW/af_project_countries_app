@@ -1,9 +1,4 @@
-import React, {
-    useState,
-    useEffect,
-    useContext,
-    useCallback
-  } from 'react';
+import React, {useState, useEffect, useContext, useCallback } from 'react';
   import Sidebar from '../components/sideBar';
   import FilterBar from '../components/filterBar';
   import CountryCard from '../components/countryCard';
@@ -21,6 +16,8 @@ import React, {
   } from '../api/favorites';
   
   export default function Home() {
+    const [currentPage, setCurrentPage] = useState(1);
+    const pageSize = 20;
     const [countries,       setCountries]      = useState([]);
     const [selectedCountry, setSelectedCountry]= useState(null);
     const [loading,         setLoading]        = useState(false);
@@ -81,6 +78,9 @@ import React, {
       return () => clearTimeout(id);
     }, [loadCountries]);
   
+    useEffect(() => {
+      setCurrentPage(1);
+    }, [search, region, lang, sort]);
     const loadFavorites = async () => {
       if (!token) return;
       try {
@@ -107,6 +107,12 @@ import React, {
     const handleCardClick = country => {
       setSelectedCountry(country);
     };
+
+    const pageCount = Math.ceil(countries.length / pageSize);
+const start = (currentPage - 1) * pageSize;
+const paged = countries.slice(start, start + pageSize);
+
+
   
     return (
       <div className="fixed inset-x-0 top-16 bottom-0 flex flex-col">
@@ -136,24 +142,45 @@ import React, {
               sort={sort}         setSort={setSort}
             />
           </Sidebar>
-  
-          <main className="flex-1 overflow-auto p-4 ">
-            {loading ? (
-              <p>Loading…</p>
-            ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {countries.map(c => (
-                  <CountryCard
-                    key={c.cca3}
-                    country={c}
-                    isFav={favorites.includes(c.cca3)}
-                    onFavToggle={() => handleFavToggle(c.cca3)}
-                    onClick={() => handleCardClick(c)}
-                  />
-                ))}
-              </div>
-            )}
-  
+          <main className="flex-1 overflow-auto p-4">
+  {loading ? (
+    <p>Loading…</p>
+  ) : (
+    <>
+      {/* 1) Grid of only the current page */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {paged.map(c => (
+          <CountryCard
+            key={c.cca3}
+            country={c}
+            isFav={favorites.includes(c.cca3)}
+            onFavToggle={() => handleFavToggle(c.cca3)}
+            onClick={() => handleCardClick(c)}
+          />
+        ))}
+      </div>
+
+      {/* 2) Pagination nav */}
+      {pageCount > 1 && (
+        <nav className="flex justify-center mt-6 space-x-2">
+          {Array.from({ length: pageCount }, (_, i) => i + 1).map(n => (
+            <button
+              key={n}
+              onClick={() => setCurrentPage(n)}
+              className={`
+                px-3 py-1 rounded
+                ${n === currentPage
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}
+              `}
+            >
+              {n}
+            </button>
+          ))}
+        </nav>
+      )}
+    </>
+  )}
             {/* Modal Detail */}
             {selectedCountry && (
               <div
