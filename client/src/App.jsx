@@ -39,20 +39,20 @@ export default function App() {
         <NavBar />
         <main className="pt-16 flex-1 container mx-auto p-4">
           <Routes>
-            <Route path="/"         element={<Landing />} />
-            <Route path="/login"         element={<Login />} />
-            <Route path="/register"      element={<Register />} />
+            
+            
             <Route path="/app"      element={<Home />} />
-            <Route path="/favorites"     element={<Favorites />} />
+            
             <Route element={<Layout />}>
            
-            
-            
-            
+            <Route path="/login"         element={<Login />} />
+            <Route path="/register"      element={<Register />} />
+            <Route path="/favorites"     element={<Favorites />} />
+            <Route path="/"         element={<Landing />} />
             </Route>
           </Routes>
         </main>
-        <Footer />
+        
       </Router>
     </AuthProvider>
   );
