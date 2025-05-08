@@ -157,7 +157,7 @@ import React, {
             {/* Modal Detail */}
             {selectedCountry && (
               <div
-                className="fixed inset-0 z-50 flex items-start sm:items-center justify-center bg-black bg-opacity-50 p-4 overflow-auto"
+                className="fixed inset-0 z-50 top-14 flex items-start sm:items-center justify-center bg-black bg-opacity-50 p-4 overflow-auto"
                 onClick={() => setSelectedCountry(null)}
               >
                 <div
