@@ -15,7 +15,7 @@ const Register = () => {
     try {
       const res = await registerUser(name, email, password);
       register(res.data);
-      navigate('/');
+      navigate('/app');
     } catch (err) {
       alert(err.response?.data?.msg || 'Registration failed');
     }

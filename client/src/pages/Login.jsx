@@ -16,7 +16,7 @@ const Login = () => {
       console.log('awa')
       login(res.data);
       console.log(res);
-      navigate('/');
+      navigate('/app');
     } catch (err) {
       alert(err.response?.data?.msg || 'Login failed');
     }
