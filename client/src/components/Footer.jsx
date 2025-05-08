@@ -27,8 +27,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-blue-900 dark:bg-teal-900 text-gray-100 py-12">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+    <footer className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-gray-800 dark:to-black text-white py-12">
+      <div className="mx-auto w-full max-w-7xl px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {/* Branding */}
         <div>
           <h3 className="text-2xl font-bold mb-2">🌍 Countries App</h3>
