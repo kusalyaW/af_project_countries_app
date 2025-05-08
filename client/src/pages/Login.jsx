@@ -4,7 +4,7 @@ import { login as loginUser } from '../api/auth';
 import { AuthContext }     from '../context/AuthContext';
 import { useNavigate }     from 'react-router-dom';
 import { EnvelopeIcon, LockClosedIcon, EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
-import Footer from '../components/Footer';
+
 export default function Login() {
   const [email, setEmail]       = useState('');
   const [password, setPassword] = useState('');
@@ -129,7 +129,6 @@ export default function Login() {
           </button>
         </div>
       </form>
-      <Footer/>
     </div>
   );
 }
