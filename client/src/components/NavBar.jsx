@@ -27,7 +27,7 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center space-x-6">
-          <Link to="/" className="text-white hover:text-gray-200 transition">
+          <Link to="/app" className="text-white hover:text-gray-200 transition">
             Home
           </Link>
           {user ? (
