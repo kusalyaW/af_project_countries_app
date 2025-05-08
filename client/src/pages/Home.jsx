@@ -127,7 +127,7 @@ import React, {
         )}
   
         {/* Sidebar & Main */}
-        <div className="flex h-full w-full">
+        <div className="flex-1 flex overflow-hidden">
           <Sidebar open={sidebarOpen} onToggle={() => setSidebarOpen(false)}>
             <FilterBar
               region={region}     setRegion={setRegion}
@@ -137,7 +137,7 @@ import React, {
             />
           </Sidebar>
   
-          <main className="flex-1 overflow-auto p-4 relative">
+          <main className="flex-1 overflow-auto p-4 ">
             {loading ? (
               <p>Loading…</p>
             ) : (
