@@ -3,6 +3,7 @@ import { getFavorites, removeFavorite } from '../api/favorites';
 import { getByCode } from '../api/countries';
 import CountryCard from '../components/countryCard';
 import { AuthContext } from '../context/AuthContext';
+import Footer from '../components/Footer';
 
 const Favorites = () => {
   const [countries, setCountries] = useState([]);
@@ -44,7 +45,9 @@ const Favorites = () => {
             ))}
           </div>
       }
+      <Footer/>
     </div>
+    
   );
 };
 
