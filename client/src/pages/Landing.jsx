@@ -16,7 +16,7 @@ export default function Landing() {
               onClick={() => nav('/app')}
               className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition"
             >
-              Enter App
+              go to country App
             </button>
           </div>
         </div>
