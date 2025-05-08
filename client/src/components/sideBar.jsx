@@ -10,7 +10,7 @@ export default function Sidebar({ open, onToggle, children }) {
         bg-white shadow-lg
         transform transition-transform duration-300 z-50
         ${open ? 'translate-x-0' : '-translate-x-full'}
-        lg:sticky lg:top-16 lg:h-[calc(100vh-4rem)] lg:overflow-auto
+        lg:translate-x-0 lg:sticky lg:shadow-none
       `}
       style={{ overflow: 'hidden' }} /* ensure no scroll */
     >
