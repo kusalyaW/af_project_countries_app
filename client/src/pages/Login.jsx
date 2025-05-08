@@ -3,7 +3,7 @@ import React, { useState, useContext } from 'react';
 import { login as loginUser } from '../api/auth';
 import { AuthContext }     from '../context/AuthContext';
 import { useNavigate }     from 'react-router-dom';
-import { MailIcon, LockClosedIcon, EyeIcon, EyeOffIcon } from '@heroicons/react/24/outline';
+import { EnvelopeIcon, LockClosedIcon, EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
 
 export default function Login() {
   const [email, setEmail]       = useState('');
@@ -54,7 +54,7 @@ export default function Login() {
 
         {/* Email Field */}
         <div className="relative">
-          <MailIcon className="w-5 h-5 text-gray-400 dark:text-gray-500 absolute left-3 top-1/2 -translate-y-1/2" />
+          <EnvelopeIcon  className="w-5 h-5 text-gray-400 dark:text-gray-500 absolute left-3 top-1/2 -translate-y-1/2" />
           <input
             type="email"
             placeholder="Email"
@@ -80,7 +80,7 @@ export default function Login() {
             className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400"
           >
             {showPwd
-              ? <EyeOffIcon className="w-5 h-5" />
+              ? <EyeSlashIcon  className="w-5 h-5" />
               : <EyeIcon    className="w-5 h-5" />}
           </button>
         </div>
