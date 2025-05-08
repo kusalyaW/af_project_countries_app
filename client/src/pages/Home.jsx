@@ -157,11 +157,11 @@ import React, {
             {/* Modal Detail */}
             {selectedCountry && (
               <div
-                className="fixed inset-0 z-50 flex items-start sm:items-center justify-center bg-black bg-opacity-50 p-4 pt-16 overflow-auto"
+                className="fixed inset-0 z-50 flex items-start sm:items-center justify-center bg-black bg-opacity-50 p-4 pt-20 overflow-auto"
                 onClick={() => setSelectedCountry(null)}
               >
                 <div
-                  className="relative bg-white p-6 rounded-lg shadow-xl max-w-md w-full text-gray-900 max-h-[90vh] overflow-y-auto"
+                  className="relative mt-16 bg-white p-6 rounded-lg shadow-xl max-w-md w-full text-gray-900 max-h-[90vh] overflow-y-auto"
                   onClick={e => e.stopPropagation()}
                 >
                   <button
