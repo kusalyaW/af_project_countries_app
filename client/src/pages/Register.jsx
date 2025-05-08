@@ -86,7 +86,7 @@ export default function Register() {
             dark:text-gray-100 dark:placeholder-gray-400
             focus:outline-none focus:ring-2 focus:ring-blue-400
             dark:bg-gray-700 dark:border-gray-600
-          "          />
+          " />
         </div>
 
         
@@ -103,7 +103,7 @@ export default function Register() {
             dark:text-gray-100 dark:placeholder-gray-400
             focus:outline-none focus:ring-2 focus:ring-blue-400
             dark:bg-gray-700 dark:border-gray-600
-          "          />
+          " />
           <button
             type="button"
             onClick={() => setShowPwd(!showPwd)}

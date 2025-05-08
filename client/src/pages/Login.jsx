@@ -52,7 +52,7 @@ export default function Login() {
           </div>
         )}
 
-        {/* Email Field */}
+        
         <div className="relative">
           <EnvelopeIcon  className="w-5 h-5 text-gray-400 dark:text-gray-500 absolute left-3 top-1/2 -translate-y-1/2" />
           <input
@@ -64,7 +64,7 @@ export default function Login() {
           />
         </div>
 
-        {/* Password Field */}
+        
         <div className="relative">
           <LockClosedIcon className="w-5 h-5 text-gray-400 dark:text-gray-500 absolute left-3 top-1/2 -translate-y-1/2" />
           <input
@@ -117,7 +117,7 @@ export default function Login() {
           {loading ? 'Signing In…' : 'Sign In'}
         </button>
 
-        {/* Extra Links */}
+        
         <div className="text-sm text-center text-gray-600 dark:text-gray-400">
           Don’t have an account?{' '}
           <button

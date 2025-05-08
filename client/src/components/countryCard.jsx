@@ -12,7 +12,6 @@ export default function CountryCard({
       onClick={onClick}
       className="relative border p-4 rounded-lg shadow hover:shadow-xl transition cursor-pointer bg-white dark:bg-gray-800  "
     >
-      {/* Favorite toggle */}
       <button
         onClick={e => { e.stopPropagation(); onFavToggle(); }}
         aria-label={isFav ? 'Remove from favorites' : 'Add to favorites'}

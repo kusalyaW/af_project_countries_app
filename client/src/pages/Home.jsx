@@ -116,7 +116,7 @@ const paged = countries.slice(start, start + pageSize);
   
     return (
       <div className="fixed inset-x-0 top-16 bottom-0 flex flex-col">
-        {/* Mobile Filters button */}
+        
         <button
           className="absolute top-4 left-4 z-40 p-2 bg-blue-600 text-white rounded lg:hidden"
           onClick={() => setSidebarOpen(true)}
@@ -124,7 +124,7 @@ const paged = countries.slice(start, start + pageSize);
           Filters
         </button>
   
-        {/* Backdrop */}
+        
         {sidebarOpen && (
           <div
             className="fixed inset-0 bg-black/50 z-30 lg:hidden"
@@ -132,7 +132,7 @@ const paged = countries.slice(start, start + pageSize);
           />
         )}
   
-        {/* Sidebar & Main */}
+       
         <div className="flex-1 flex overflow-hidden">
           <Sidebar open={sidebarOpen} onToggle={() => setSidebarOpen(false)}>
             <FilterBar
@@ -147,7 +147,7 @@ const paged = countries.slice(start, start + pageSize);
     <p>Loading…</p>
   ) : (
     <>
-      {/* 1) Grid of only the current page */}
+      {/* Grid of only the current page */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {paged.map(c => (
           <CountryCard
@@ -160,7 +160,7 @@ const paged = countries.slice(start, start + pageSize);
         ))}
       </div>
 
-      {/* 2) Pagination nav */}
+      
       {pageCount > 1 && (
         <nav className="flex justify-center mt-6 space-x-2">
           {Array.from({ length: pageCount }, (_, i) => i + 1).map(n => (

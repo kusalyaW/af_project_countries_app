@@ -16,11 +16,11 @@ export default function FilterBar({
   region,    setRegion,
   lang,      setLang,
   search,    setSearch,
-  sort,      setSort,      // ← grab these props
+  sort,      setSort,      
 }) {
   return (
     <div className="flex flex-wrap gap-4 mb-4 items-center">
-      {/* Live search */}
+      
       <input
         type="text"
         placeholder="Search by name…"
@@ -29,7 +29,7 @@ export default function FilterBar({
         className="border p-2 flex-1 min-w-[200px] dark:bg-gray-700 text-gray-900 dark:text-gray-100"
       />
 
-      {/* Sort dropdown (react-select) */}
+      
       <div className="min-w-[150px]">
         <Select
           options={sortOptions}
@@ -42,7 +42,6 @@ export default function FilterBar({
         />
       </div>
 
-      {/* Region filter */}
       <select
         value={region}
         onChange={e => setRegion(e.target.value)}
@@ -54,7 +53,6 @@ export default function FilterBar({
         ))}
       </select>
 
-      {/* Language filter */}
       <select
         value={lang}
         onChange={e => setLang(e.target.value)}
